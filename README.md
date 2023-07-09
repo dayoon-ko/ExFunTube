@@ -1,6 +1,5 @@
 # ExFunTube
 The source code of ExFunTube
-# Official Implementation of [Zero-Shot Video Captioning with Evolving Pseudo-Tokens](https://arxiv.org/abs/2207.11100)
 
 ## Usage
 
