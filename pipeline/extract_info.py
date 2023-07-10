@@ -97,6 +97,7 @@ def run_vidcap(args):
             videos_w_stt.append(vid)
     run_videos(videos_w_stt)
 
+
 ########## Gather ##########
 def gather_info(args):
     stts = {}
@@ -117,7 +118,6 @@ def gather_info(args):
     # store all the video information
     with open(args.root_dir + '/info.json', 'w') as f:
         json.dump(stts, f, indent=2)
-        
 
 
 def extract(args):

@@ -40,7 +40,6 @@ def pipeline(args):
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--root_dir', type=str, help='Root folder to store youtube videos', default='videos')
-    parser.add_argument('--vid_file', type=str, help='Directory of torch .pt file consisting of youtube ids', default='./video_ids.pt')
     parser.add_argument('--num_workers', help='The number of threads', type=int, default=25)
     parser.add_argument('--video_ids', type=str, help='Directory of torch .pt file consisting of video ids', default='./video_ids.pt')
     parser.add_argument('--video_info', type=str, help='Directory of results of speech-to-text and video captioning', default='./videos/info.json')
