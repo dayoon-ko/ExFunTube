@@ -13,8 +13,6 @@ $ python run_pipeline.py --video_ids {video_id_file_name}
 ### To run prompting:
 
 ```bash
-$ python run.py 
---token_wise --randomized_prompt
---run_type caption_images
---data_path examples/example_image.jpg
+$ cd prompting
+$ python run_prompting.py
 ```
