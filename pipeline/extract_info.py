@@ -44,7 +44,7 @@ def download_videos(args):
         'outtmpl' : args.root_dir + '/%(id)s/%(title)s.mp4',
         'format' : '136+140/137+140/136+m4a/137+m4a/mp4+140/18/22/mp4+m4a',
     }
-    urls = ['https://youtube.com/watch?v=' + i for i in torch.load(args.vid_file) if not os.path.exists(args.root_dir + f'/{i}')]
+    urls = ['https://youtube.com/watch?v=' + i for i in torch.load(args.video_ids) if not os.path.exists(args.root_dir + f'/{i}')]
     with Pool(args.num_workers) as p:
         p.map(download, urls)
 
