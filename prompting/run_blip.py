@@ -37,8 +37,8 @@ def generate_captions(images, model, vis_processors, device, iter=20):
     return caps
 
 
-def caption_video(video_pth, model, vis_processors, device, sample_fps=5.0, num_captions=20):
-    vr = VideoReader(glob(video_pth+'/*.mp4')[0], ctx=cpu(0))
+def caption_video(video_pth, model, vis_processors, device, sample_fps=5.0, num_captions=2):
+    vr = VideoReader(video_pth, ctx=cpu(0))
     org_fps = vr.get_avg_fps()
     len_frames = vr[:].shape[0]
     t_stride = int(round(float(org_fps)/float(sample_fps)))

@@ -1,9 +1,10 @@
-from scenedetect import detect, AdaptiveDetector
 import torch
 import librosa
 from pathlib import Path
 import os
 import json
+from scenedetect import detect
+
 
 def scene_detection(video, detector):
     
@@ -27,7 +28,7 @@ def scene_detection(video, detector):
         return (starts, ends)
         
     except:
-        print(f"Error occurs while downloading {video}")
+        print(f"Error occurs while detecting scene boundaries : {video}")
         return None
         
 

@@ -43,7 +43,7 @@ class Explanationer:
     
     
     # make scenes
-    def get_meta(self, vid):
+    def _get_meta(self, vid):
         
         # meta
         meta_pth = f'{self.root_dir}/{vid}/segments.json'
@@ -51,7 +51,7 @@ class Explanationer:
             meta_dict = json.load(f)
         
         audtag_pth = f'{self.root_dir}/{vid}/audtag.pt'
-        audtag = torch.load(audtag_pth))
+        audtag = torch.load(audtag_pth)
         audtag = [i[0] for i in audtag[:3] if i[1] >= 0.1]
         
         # gather scene descriptions
@@ -102,7 +102,7 @@ class Explanationer:
     
     def _run_video(self, vid):
         time.sleep(0.5)
-        scene_desc, audtag = get_meta(vid)
+        scene_desc, audtag = self._get_meta(vid)
         lm = LanguageModel(os.getenv("OPENAI_API_KEY"))
         prompt, explanation = self._explanation_prompt_w_audio(lm, scene_desc, audtag)
         return (vid, {'prompt': prompt, 'res': explanation})
@@ -123,13 +123,12 @@ class Explanationer:
             print(f'Store {i}th iteration result' )
             with open(self.output_pth, 'w') as f:
                 json.dump(self.explanations, f, indent=2)
-            raise Exception
         
 
 class LanguageModel:
     def __init__(self, key):
         openai.api_key = key
-        signal.signal(signal.SIGALRM, alarm_handler)
+        signal.signal(signal.SIGALRM, self.alarm_handler)
 
     def __call__(self, prompt, temperature=0.3) -> str:  
         while True:
