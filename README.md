@@ -7,6 +7,8 @@ The source code of ExFunTube
 
 ```bash
 $ cd pipeline
+$ conda create --name {env_name}
+$ conda env create --file environment.yaml
 $ python run_pipeline.py --video_ids {video_id_file_name}
 ```
 
@@ -14,5 +16,7 @@ $ python run_pipeline.py --video_ids {video_id_file_name}
 
 ```bash
 $ cd prompting
+$ conda create --name {env_name}
+$ conda env create --file environment.yaml
 $ python run_prompting.py
 ```
