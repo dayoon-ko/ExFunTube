@@ -1,4 +1,4 @@
-# Repository for "Can Language Models Laugh at YouTube Short-form Videos?"
+Can Language Models Laugh at YouTube Short-form Videos? [EMNLP 2023]
 </br>
 
 ## ExFunTube Dataset
