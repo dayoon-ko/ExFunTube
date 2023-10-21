@@ -2,7 +2,7 @@
 
 
 
-## ExFunTube Dataset <a href="https://exfuntube.github.io/">[Dataset Page]</a>
+## ExFunTube Dataset &nsfp; <a href="https://exfuntube.github.io/">[Dataset Page]</a>
 To evaluate whether LLMs can understand humor in videos, we collect user-generated, short-form funny videos from YouTube. It consists of 10,136 videos annotated with start and end timestamps of funny moments and corresponding explanations.  
 
 ## How to make LLMs watch and explain funny videos?
