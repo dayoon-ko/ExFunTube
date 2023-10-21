@@ -35,7 +35,7 @@ $ python run_prompting.py
 <br/>
 
 ## Citation
-<cite>
+<code>
 @inproceedings{
       ko2023can,
       title={Can Language Models Laugh at YouTube Short-form Videos?},
@@ -43,4 +43,4 @@ $ python run_prompting.py
       booktitle={The 2023 Conference on Empirical Methods in Natural Language Processing},
       year={2023}
     }
-</cite>
+</code>
