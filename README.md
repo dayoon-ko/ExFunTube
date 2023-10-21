@@ -34,4 +34,11 @@ $ python run_prompting.py
 
 ## Citation
 ```
+@inproceedings{
+      ko2023can,
+      title={Can Language Models Laugh at YouTube Short-form Videos?},
+      author={Dayoon Ko, Sangho Lee, Gunhee Kim},
+      booktitle={The 2023 Conference on Empirical Methods in Natural Language Processing},
+      year={2023}
+    }
 ```
