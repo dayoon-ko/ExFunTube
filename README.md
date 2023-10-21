@@ -8,6 +8,7 @@ To evaluate whether LLMs can understand humor in videos, we collect user-generat
 ## How to make LLMs watch and explain funny videos?
 Since black-box LLMs can be given only text, we have to convert videos into text form. For this, we devise a zero-shot video-to-text prompting framework. We divide the video into visual and audio, and audio is further split into transcript and sound tags. To gather video information from three different components, we use SOTA models in a zero-shot manner. And then, we configure prompts with gathered texts.<br/>  
 <br/>
+
 ![ExFunTube](./image.png)   
 
 
