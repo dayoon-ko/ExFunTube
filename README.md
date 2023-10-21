@@ -11,7 +11,7 @@ Since black-box LLMs can be given only text, we have to convert videos into text
 
 ![ExFunTube](./image.png)   
 
-
+<br/>
 
 ## Usage
 
