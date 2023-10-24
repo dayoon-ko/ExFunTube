@@ -19,8 +19,8 @@ Since black-box LLMs can be given only text, we have to convert videos into text
 
 ```bash
 $ cd pipeline
-$ conda create --name {env_name}
 $ conda env create --file environment.yaml
+$ pip install git+https://github.com/openai/CLIP.git
 $ python run_pipeline.py --video_ids {video_id_file_name}
 ```
 
@@ -28,8 +28,8 @@ $ python run_pipeline.py --video_ids {video_id_file_name}
 
 ```bash
 $ cd prompting
-$ conda create --name {env_name}
 $ conda env create --file environment.yaml
+$ pip install git+https://github.com/openai/CLIP.git
 $ python run_prompting.py
 ```
 <br/>
