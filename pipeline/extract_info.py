@@ -14,6 +14,7 @@ from pathlib import Path
 import whisper
 from zero_shot_video_to_text.run import run_videos
 
+
 ########## Download Videos ##########
 def filter(info, *, incomplete):
     '''Filter function for sustain only the videos shorter than 30 seconds'''
@@ -24,8 +25,16 @@ def filter(info, *, incomplete):
     #if category and (category not in filter_category):
     #    return 'Not funny shorts'
 
+ydl_opts = {
+        'match_filter' : filter,
+        'quiet' : 'True',
+        'noplaylist' : 'True',
+        'format' : '136+140/137+140/136+m4a/137+m4a/mp4+140/18/22/mp4+m4a',
+        'outtmpl' :  '%(id)s/%(title)s.mp4'
+    }
+
 def download(url):
-    '''Given url, download the according video to the folder'''
+    '''Given args, download the according video to the folder'''
     if 'channel' in url:
         return
     ydl = yt_dlp.YoutubeDL(ydl_opts)
@@ -34,20 +43,33 @@ def download(url):
     except Exception as e:
         print(e)
 
-
-def download_videos(args):
-    global ydl_opts
+def download_videos_(args):
     ydl_opts = {
         'match_filter' : filter,
         'quiet' : 'True',
         'noplaylist' : 'True',
-        'outtmpl' : args.root_dir + '/%(id)s/%(title)s.mp4',
         'format' : '136+140/137+140/136+m4a/137+m4a/mp4+140/18/22/mp4+m4a',
+        'outtmpl' : '%(id)s/%(title)s.mp4'
     }
     urls = ['https://youtube.com/watch?v=' + i for i in torch.load(args.video_ids) if not os.path.exists(args.root_dir + f'/{i}')]
     with Pool(args.num_workers) as p:
         p.map(download, urls)
 
+def download_videos(args):
+    ydl_opts = {
+        'match_filter' : filter,
+        'quiet' : 'True',
+        'noplaylist' : 'True',
+        'format' : '136+140/137+140/136+m4a/137+m4a/mp4+140/18/22/mp4+m4a',
+        'outtmpl' :  args.root_dir + '/%(id)s/%(title)s.mp4'
+    }
+    urls = ['https://youtube.com/watch?v=' + i for i in torch.load(args.video_ids) if not os.path.exists(args.root_dir + f'/{i}')]
+    ydl = yt_dlp.YoutubeDL(ydl_opts)
+    for url in urls:
+        try:
+            error_code = ydl.download(url)
+        except Exception as e:
+            print(e)
 
 ########## Extract Audios ##########
 def extract_audio(vid_dir):
@@ -95,7 +117,7 @@ def run_vidcap(args):
             aud_json = json.load(f)
         if len(aud_json['text']) > 0:
             videos_w_stt.append(vid)
-    run_videos(videos_w_stt)
+    run_videos(args, videos_w_stt)
 
 
 ########## Gather ##########
@@ -142,7 +164,7 @@ def extract(args):
     # gather results of stt & vcap
     print('Gather outputs')
     gather_info(args)
-    print(f"Store speech-to-text & video captioning results of videos at {args.root_dir + '/info.json'}")
+    print(f"Store speech-to-text & video captioning results of videos at {args.root_dir}/info.json")
     
     
 def get_args():

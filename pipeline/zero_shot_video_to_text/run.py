@@ -1,6 +1,5 @@
 import argparse
 import logging
-import clip
 import sys
 sys.path.append('./zero_shot_video_to_text')
 from model.CapGenerator import CLIPTextGenerator
@@ -130,9 +129,9 @@ def run_video(args, video_path):
 
     return clip_sorted_captions[0]
 
-def run_videos(videos):
+def run_videos(args, videos):
     torch.set_num_threads(3)
-    args = get_parser().parse_args()
+    #args = get_parser().parse_args()
     args.token_wise = True
     args.randomized_prompt = True
     args.run_type = 'caption_images'
