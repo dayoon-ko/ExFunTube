@@ -19,7 +19,7 @@ def calculate_sentence_bert_score(d_explanations, dv_explanations):
     
 
 def calculate(args):
-    with open(args.prompt_result_path, 'r') as f:
+    with open(f"{args.root_dir}/info.json", 'r') as f:
         src_json = json.load(f)
 
     keys_not_to_check = [k for k, v in src_json.items() if v['dv_explanation'] == None]
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = calculate(args)
     with open(args.prompt_result_score_path, 'w') as f:
-        json.dump(src_json, f, indent=2)
+        json.dump(result, f, indent=2)
 
 
 
