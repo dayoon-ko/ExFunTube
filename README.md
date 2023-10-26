@@ -1,4 +1,4 @@
-# Can Language Models Laugh at YouTube Short-form Videos? [EMNLP 2023]  
+# Can Language Models Laugh at YouTube Short-form Videos? [EMNLP 2023] <a href="https://arxiv.org/abs/2310.14159">[ArXiv]</a>
 <br/>
 
 
