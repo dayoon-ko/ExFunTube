@@ -33,7 +33,7 @@ $ python run_prompting.py
 
 
 #### Citation
-```
+```bib
 @inproceedings{
       ko2023can,
       title={Can Language Models Laugh at YouTube Short-form Videos?},
