@@ -34,10 +34,17 @@ $ python run_prompting.py
 
 #### Citation
 ```bib
-@inproceedings{ko2023can,
-      title={Can Language Models Laugh at YouTube Short-form Videos?},
-      author={Dayoon Ko, Sangho Lee, Gunhee Kim},
-      booktitle={The 2023 Conference on Empirical Methods in Natural Language Processing},
-      year={2023}
-    }
+@inproceedings{ko-etal-2023-language,
+    title = "Can Language Models Laugh at {Y}ou{T}ube Short-form Videos?",
+    author = "Ko, Dayoon  and
+      Lee, Sangho  and
+      Kim, Gunhee",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.176/",
+    doi = "10.18653/v1/2023.emnlp-main.176",
+    pages = "2897--2916",
+}
 ```
