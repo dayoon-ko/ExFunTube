@@ -1,4 +1,4 @@
-### Can Language Models Laugh at YouTube Short-form Videos? [EMNLP 2023] <a href="https://arxiv.org/abs/2310.14159">[ArXiv]</a>
+### Can Language Models Laugh at YouTube Short-form Videos? <a href="https://aclanthology.org/2023.emnlp-main.176.pdf">[EMNLP 2023] <a href="https://arxiv.org/abs/2310.14159">[ArXiv]</a>
 
 #### ExFunTube Dataset &nbsp; <a href="https://exfuntube.github.io/">[Dataset Page]</a>
 To evaluate whether LLMs can understand humor in videos, we collect user-generated, short-form funny videos from YouTube. It consists of 10,136 videos annotated with start and end timestamps of funny moments and corresponding explanations.<br/>  
